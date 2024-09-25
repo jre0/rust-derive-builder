@@ -297,7 +297,7 @@ macro_rules! default_setter {
             ident: syn::Ident::new("foo", ::proc_macro2::Span::call_site()),
             field_ident: &syn::Ident::new("foo", ::proc_macro2::Span::call_site()),
             field_type: BuilderFieldType::Optional(Box::leak(Box::new(parse_quote!(Foo)))),
-            generic_into: false,
+            generic_into: true,
             strip_option: false,
             deprecation_notes: &Default::default(),
             each: None,
