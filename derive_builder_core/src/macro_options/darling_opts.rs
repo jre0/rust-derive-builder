@@ -192,7 +192,7 @@ impl Default for BuildFn {
             name: Ident::new("build", Span::call_site()),
             validate: None,
             visibility: Default::default(),
-            error: Some(BuildFnError::Existing(Path::from(PathSegment::from(Ident::new("graph::Error", Span::call_site()))))),
+            error: Some(BuildFnError::Existing(Path::from(PathSegment::from(Ident::new("super::graph::Error", Span::mixed_site()))))),
         }
     }
 }
