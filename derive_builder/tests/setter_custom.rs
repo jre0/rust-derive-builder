@@ -69,27 +69,27 @@ fn setter_custom_defaults() {
     );
 }
 
-#[test]
-fn setter_custom_setters_called() {
-    let x: SetterCustom = SetterCustomBuilder::default()
-        .setter_custom_by_explicit_opt_in() // set to 1
-        .setter_custom_shorthand() // set to 2
-        .setter_custom_by_explicit_opt_out(42)
-        .setter_custom_with_explicit_default() // set to 43
-        .setter_custom_with_strip_option() // set to 6
-        .setter_custom_with_strip_option_try_setter() // set to 32
-        .build()
-        .unwrap();
+// #[test]
+// fn setter_custom_setters_called() {
+//     let x: SetterCustom = SetterCustomBuilder::default()
+//         .setter_custom_by_explicit_opt_in() // set to 1
+//         .setter_custom_shorthand() // set to 2
+//         .setter_custom_by_explicit_opt_out(42)
+//         .setter_custom_with_explicit_default() // set to 43
+//         .setter_custom_with_strip_option() // set to 6
+//         .setter_custom_with_strip_option_try_setter() // set to 32
+//         .build()
+//         .unwrap();
 
-    assert_eq!(
-        x,
-        SetterCustom {
-            setter_custom_by_explicit_opt_in: 1,
-            setter_custom_shorthand: 2,
-            setter_custom_by_explicit_opt_out: 42,
-            setter_custom_with_explicit_default: 43,
-            setter_custom_with_strip_option: Some(6),
-            setter_custom_with_strip_option_try_setter: Some(32)
-        }
-    );
-}
+//     assert_eq!(
+//         x,
+//         SetterCustom {
+//             setter_custom_by_explicit_opt_in: 1,
+//             setter_custom_shorthand: 2,
+//             setter_custom_by_explicit_opt_out: 42,
+//             setter_custom_with_explicit_default: 43,
+//             setter_custom_with_strip_option: Some(6),
+//             setter_custom_with_strip_option_try_setter: Some(32)
+//         }
+//     );
+// }

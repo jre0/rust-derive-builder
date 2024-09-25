@@ -30,7 +30,7 @@ impl BuilderPattern {
 /// Defaults to `Mutable`.
 impl Default for BuilderPattern {
     fn default() -> Self {
-        Self::Mutable
+        Self::Owned
     }
 }
 

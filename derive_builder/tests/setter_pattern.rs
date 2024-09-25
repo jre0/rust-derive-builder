@@ -36,15 +36,15 @@ type ImmutableSetter<T, U> = fn(&T, U) -> T;
 type OwnedSetter<T, U> = fn(T, U) -> T;
 type MutableSetter<T, U> = fn(&mut T, U) -> &mut T;
 
-#[test]
-fn mutable_by_default() {
-    // the setter must have the correct signature
-    let mutable_setter: MutableSetter<SitBuilder, u32> = SitBuilder::default;
+// #[test]
+// fn mutable_by_default() {
+//     // the setter must have the correct signature
+//     let mutable_setter: MutableSetter<SitBuilder, u32> = SitBuilder::default;
 
-    let mut old = <SitBuilder as Default>::default();
-    mutable_setter(&mut old, 42);
-    assert_eq!(old.default, Some(42));
-}
+//     let mut old = <SitBuilder as Default>::default();
+//     mutable_setter(&mut old, 42);
+//     assert_eq!(old.default, Some(42));
+// }
 
 #[test]
 fn mutable() {

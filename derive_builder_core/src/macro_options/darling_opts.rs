@@ -6,6 +6,7 @@ use crate::BuildMethod;
 use darling::util::{Flag, PathList, SpannedValue};
 use darling::{Error, FromMeta};
 use proc_macro2::Span;
+use syn::PathSegment;
 use syn::{spanned::Spanned, Attribute, Generics, Ident, Meta, Path};
 
 use crate::{
@@ -191,7 +192,7 @@ impl Default for BuildFn {
             name: Ident::new("build", Span::call_site()),
             validate: None,
             visibility: Default::default(),
-            error: None,
+            error: Some(BuildFnError::Existing(Path::from(PathSegment::from(Ident::new("graph::Error", Span::call_site()))))),
         }
     }
 }
